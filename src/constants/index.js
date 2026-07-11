@@ -33,43 +33,7 @@ export const RESUME = {
   fileName: 'John_Leonard_Libanan_Resume.pdf',
 }
 
-export const PROJECTS = [
-  {
-    title: 'ESSU-IGP E-Commerce Website',
-    category: 'Web Application',
-    description: 'Fully functional e-commerce system with admin role management and full-stack features.',
-    techStack: ['PHP', 'Bootstrap', 'MySQL'],
-    link: '#',
-  },
-  {
-    title: 'Lawatsa',
-    category: 'Web Application',
-    description: 'Hotel booking system where users can select a hotel and book a room.',
-    techStack: ['Node.js', 'Express.js', 'PostgreSQL', 'React'],
-    link: '#',
-  },
-  {
-    title: 'Digital Archive',
-    category: 'Web Application',
-    description: 'System for storing digital documents focused on academics, theses, and personal files.',
-    techStack: ['PHP', 'Bootstrap', 'MySQL'],
-    link: '#',
-  },
-  {
-    title: 'Infirmary Connect',
-    category: 'Web Application',
-    description: 'Appointment system for an infirmary office with an additional KIOSK interface.',
-    techStack: ['Vite', 'React', 'Node.js', 'Express.js', 'PostgreSQL'],
-    link: '#',
-  },
-  {
-    title: 'Rice Plant Health Monitoring',
-    category: 'Web Application',
-    description: 'Full-stack system for monitoring rice plant health with real-time data visualization.',
-    techStack: ['Vite', 'React', 'TypeScript', 'Node.js', 'PostgreSQL'],
-    link: '#',
-  },
-]
+export { PROJECTS } from '@/data/projects'
 
 export const LANDING = {
   role: 'Computer Engineer - Full Stack Developer',
