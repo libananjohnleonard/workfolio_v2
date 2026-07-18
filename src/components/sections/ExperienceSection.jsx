@@ -83,14 +83,14 @@ function ProjectCard({ project, index }) {
 
         {project.tags && (
           <div className="mt-3 flex flex-wrap gap-1">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className={cn(type.tag, 'rounded-full border border-neutral-300 bg-white px-2.5 py-1 text-neutral-600 shadow-sm shadow-neutral-900/5 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:shadow-none')}
-            >
-              {tag}
-            </span>
-          ))}
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className={cn(type.tag, 'rounded-full border border-neutral-300 bg-white px-2.5 py-1 text-neutral-600 shadow-sm shadow-neutral-900/5 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:shadow-none')}
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         )}
       </div>

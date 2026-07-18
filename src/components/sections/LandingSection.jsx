@@ -45,21 +45,21 @@ export default function LandingSection() {
           <div className="pt-4 lg:pt-6">
             <p className="mb-4 inline-flex w-fit flex-wrap items-center gap-x-2 gap-y-1 font-sans text-[10px] leading-tight font-semibold tracking-[0.16em] text-neutral-500 uppercase sm:gap-3 sm:text-[11px] sm:tracking-[0.22em] dark:text-neutral-400">
               <span>Computer Engineer</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="h-4 w-6 sm:h-5 sm:w-8"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M2 12h20"
-                  />
-                </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="h-4 w-6 sm:h-5 sm:w-8"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2 12h20"
+                />
+              </svg>
               <span>Full Stack Developer</span>
             </p>
 

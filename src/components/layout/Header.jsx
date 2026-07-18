@@ -20,7 +20,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className="border-x border-t border-neutral-300 px-8 pt-8 lg:px-12 dark:border-neutral-700">
+    <header className="border-x border-t border-neutral-300 px-8 pt-8 lg:px-12 dark:border-neutral-700 ">
       <div className="flex items-center justify-between">
         <a
           href="#landing"
