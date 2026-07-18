@@ -37,7 +37,7 @@ function SocialLink({ href, label, icon, external = false }) {
 
 export default function LandingSection() {
   return (
-    <section id="landing" className="relative flex min-h-[calc(100svh-6rem)] flex-col scroll-mt-0 sm:min-h-[calc(100svh-7rem)]">
+    <section id="landing" className="relative flex max-h-[670px] overflow-hidden flex-col scroll-mt-0">
       <ScrollIndicator />
 
       <div className="flex flex-1 flex-col justify-center px-5 pt-6 pb-8 sm:px-8 sm:pt-8 sm:pb-10 lg:px-12 lg:pt-12 lg:pb-12">
@@ -63,9 +63,9 @@ export default function LandingSection() {
               <span>Full Stack Developer</span>
             </p>
 
-            <h1 className="font-sora text-[clamp(1.75rem,9vw,4.4rem)] leading-[1.04] font-bold tracking-[0.04em] text-neutral-900 uppercase sm:text-[clamp(3.75rem,11vw,9rem)] sm:leading-[1.02] sm:tracking-[0.1em] dark:text-neutral-50">
+            <h1 className="font-sora text-[clamp(1.75rem,9vw,4.4rem)] leading-[1.04] font-bold tracking-[0.04em] text-neutral-900 uppercase sm:text-[clamp(3.75rem,11vw,9rem)] sm:leading-[1.02] sm:tracking-[0.1em] dark:text-neutral-50 max-w-full">
               {LANDING.nameLines.map((line) => (
-                <span key={line} className="block whitespace-nowrap">
+                <span key={line} className="block">
                   {line}
                 </span>
               ))}
