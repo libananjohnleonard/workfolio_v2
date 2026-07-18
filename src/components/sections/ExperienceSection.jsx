@@ -221,7 +221,7 @@ function AccordionItem({ item, index, onCertificateClick }) {
         </span>
         <span className="flex items-center gap-4">
           {(item.period || item.location || item.address) && (
-            <span className="hidden min-w-[260px] flex-col items-end gap-1 sm:flex">
+            <span className="hidden xl:flex min-w-[260px] flex-col items-end gap-1">
               {item.period && (
                 <span className={accordionPeriodClassName}>
                   {item.period}

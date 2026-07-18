@@ -37,7 +37,7 @@ function SocialLink({ href, label, icon, external = false }) {
 
 export default function LandingSection() {
   return (
-    <section id="landing" className="relative flex max-h-[670px] overflow-hidden flex-col scroll-mt-0">
+    <section id="landing" className="relative flex max-h-[670px] md:max-h-[750px] lg:max-h-[850px] xl:max-h-[900px] overflow-hidden flex-col scroll-mt-0">
       <ScrollIndicator />
 
       <div className="flex flex-1 flex-col justify-center px-5 pt-6 pb-8 sm:px-8 sm:pt-8 sm:pb-10 lg:px-12 lg:pt-12 lg:pb-12">
