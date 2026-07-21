@@ -29,8 +29,8 @@ export const SOCIAL_LINKS = [
 
 export const RESUME = {
   label: 'Resume',
-  href: '/Resume/John_Leonard_Libanan_Full_Stack_Developer_Resume.pdf',
-  fileName: 'John_Leonard_Libanan_Full_Stack_Developer_Resume.pdf',
+  href: '/Resume/Libanan_Full_Stack_Developer_Resume.pdf',
+  fileName: 'Libanan_Full_Stack_Developer_Resume.pdf',
 }
 
 export { PROJECTS } from '@/data/projects'
