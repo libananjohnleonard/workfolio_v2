@@ -7,10 +7,10 @@ function ScrollIndicator() {
       className="pointer-events-none absolute right-8 top-16 hidden flex-col items-center gap-4 lg:flex lg:top-24"
       aria-hidden="true"
     >
-      <div className="relative h-[90px] w-px overflow-hidden bg-[#5AD9BB]/25">
-        <div className="animate-scroll-line absolute top-0 h-10 w-px bg-[#5AD9BB]" />
+      <div className="relative h-[90px] w-px overflow-hidden bg-[#173F39]/25 dark:bg-[#5AD9BB]/25">
+        <div className="animate-scroll-line absolute top-0 h-10 w-px bg-[#173F39] dark:bg-[#5AD9BB]" />
       </div>
-      <span className="font-sans text-[9px] tracking-[0.28em] text-[#5AD9BB] uppercase [writing-mode:vertical-rl]">
+      <span className="font-sans text-[9px] tracking-[0.28em] text-[#173F39] uppercase [writing-mode:vertical-rl] dark:text-[#5AD9BB]">
         Scroll Down
       </span>
     </div>

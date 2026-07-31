@@ -238,7 +238,10 @@ function AccordionItem({ item, index, onCertificateClick }) {
             </span>
           )}
           <ChevronIcon
-            className="h-[6px] w-[11px] shrink-0 text-[#173F39] transition-colors group-hover:text-[#173F39] dark:text-[#5AD9BB] dark:group-hover:text-[#5AD9BB]"
+            className={cn(
+              'h-[6px] w-[11px] shrink-0 transition-colors group-hover:text-[#173F39] dark:group-hover:text-[#5AD9BB]',
+              open ? 'text-[#173F39] dark:text-[#5AD9BB]' : 'text-neutral-500 dark:text-white',
+            )}
             open={open}
           />
         </span>
