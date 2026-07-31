@@ -8,9 +8,9 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="border-t border-neutral-200 px-8 py-12 lg:px-12 dark:border-neutral-700"
+      className="border-t border-neutral-300 px-5 py-10 sm:px-8 sm:py-12 lg:px-12 dark:border-neutral-700"
     >
-      <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_1fr] lg:gap-20">
+      <div className="grid grid-cols-1 gap-12 sm:gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
         {/* Left column — CTA */}
         <div className="flex flex-col">
           <h2 className={cn(type.label, 'mb-6')}>
@@ -25,10 +25,10 @@ export default function ContactSection() {
             Whether it's a portfolio, business website, dashboard, or full-stack application, I'm ready to help transform your ideas into a polished digital experience.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <div className="mt-7 flex flex-wrap items-center gap-3 sm:mt-8 sm:gap-4">
             <a
-              href="#"
-              className={cn(type.button, 'group inline-flex items-center gap-2 rounded-full border border-neutral-900 bg-neutral-900 px-5 py-2 text-neutral-50 uppercase transition-all duration-300 hover:bg-transparent hover:text-neutral-900 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-transparent dark:hover:text-neutral-100')}
+              href={SOCIAL_LINKS.find((link) => link.icon === 'email')?.href ?? 'mailto:johnleonardlibanan.work@gmail.com'}
+              className={cn(type.button, 'group inline-flex cursor-pointer items-center gap-2 rounded-full border border-neutral-900 bg-neutral-900 px-5 py-2 text-neutral-50 uppercase transition-all duration-300 hover:bg-neutral-800 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200')}
             >
               Start a Project
               <svg
@@ -47,7 +47,7 @@ export default function ContactSection() {
             <a
               href={RESUME.href}
               download={RESUME.fileName}
-              className={cn(type.button, 'group inline-flex items-center gap-2 rounded-full border border-neutral-900 bg-neutral-900 px-5 py-2 text-neutral-50 uppercase transition-all duration-300 hover:bg-transparent hover:text-neutral-900 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-transparent dark:hover:text-neutral-100')}
+              className={cn(type.button, 'group inline-flex cursor-pointer items-center gap-2 rounded-full border border-neutral-900 bg-neutral-900 px-5 py-2 text-neutral-50 uppercase transition-all duration-300 hover:bg-neutral-800 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200')}
             >
               <DownloadIcon className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-y-0.5" />
               {RESUME.label}
@@ -72,14 +72,14 @@ export default function ContactSection() {
             Open to freelance projects, collaborations, internships, and full-time opportunities. Feel free to reach out through any of the platforms below.
           </p>
 
-          <div className="mt-8 flex flex-row gap-3">
+          <div className="mt-7 flex flex-row gap-3 sm:mt-8">
             {SOCIAL_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 aria-label={link.label}
                 {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                className="group flex h-9 w-9 items-center justify-center rounded-full border border-neutral-900 bg-neutral-900 text-neutral-50 transition-all duration-300 hover:bg-transparent hover:text-neutral-900 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-transparent dark:hover:text-neutral-100"
+                className="group flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-neutral-900 bg-neutral-900 text-neutral-50 transition-all duration-300 hover:bg-neutral-800 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200"
               >
                 <SocialIcon type={link.icon} className="h-3.5 w-3.5" />
               </a>

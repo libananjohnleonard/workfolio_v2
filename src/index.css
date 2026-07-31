@@ -32,7 +32,7 @@
   body {
     @apply m-0 min-h-svh font-sans font-light antialiased;
     padding: 20px;
-    border: 1px solid #d4d0c8;
+    border: 1px solid #c6c0b7;
     background: #f2efea;
     border-radius: 8px;
   }
@@ -40,6 +40,24 @@
   html.dark body {
     border-color: #333333;
     background: #141414;
+  }
+}
+
+.tech-pill {
+  border-color: #26453E;
+  background: #26453E;
+  color: #5AD9BB;
+}
+
+.tech-pill:hover {
+  border-color: #5AD9BB;
+  color: #5AD9BB;
+}
+
+@media (max-width: 639px) {
+  body {
+    padding: 0;
+    border-radius: 0;
   }
 }
 

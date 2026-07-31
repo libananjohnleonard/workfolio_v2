@@ -70,27 +70,27 @@ function ProjectGalleryModal({ project, onClose }) {
         onClick={onClose}
         aria-label="Close project gallery"
       />
-      <div className="relative z-10 flex max-h-[92svh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-[#f2efea] p-4 shadow-2xl sm:p-5 dark:border-neutral-700 dark:bg-[#141414]">
+      <div className="relative z-10 flex max-h-[92svh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-neutral-300 bg-[#f2efea] p-4 shadow-2xl sm:p-5 dark:border-neutral-700 dark:bg-[#141414]">
         <div className="mb-4 flex items-start justify-between gap-4">
           <div className="flex min-w-0 flex-col">
             <span className="font-sans text-[13px] font-semibold text-neutral-900 dark:text-neutral-50">
               {project.title}
             </span>
-            <span className={cn(type.mutedLabel, 'font-light tracking-[0.12em] text-neutral-400 dark:text-neutral-500')}>
+            <span className={cn(type.mutedLabel, 'font-light tracking-[0.12em] text-neutral-600 dark:text-neutral-400')}>
               {activeIndex + 1} of {totalImages}
             </span>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-neutral-300 text-neutral-600 transition-colors hover:border-neutral-900 hover:text-neutral-900 dark:border-neutral-600 dark:text-neutral-400 dark:hover:border-neutral-100 dark:hover:text-neutral-100"
+            className="flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded-full border border-neutral-400 text-neutral-700 transition-colors hover:border-neutral-900 hover:text-neutral-900 dark:border-neutral-600 dark:text-neutral-300 dark:hover:border-neutral-100 dark:hover:text-neutral-100"
             aria-label="Close"
           >
             <CloseIcon />
           </button>
         </div>
 
-        <div className="relative flex min-h-0 flex-1 items-center justify-center overflow-hidden rounded-lg border border-neutral-200 bg-white p-3 dark:border-neutral-700 dark:bg-neutral-900">
+        <div className="relative flex min-h-0 flex-1 items-center justify-center overflow-hidden rounded-lg border border-neutral-300 bg-white p-3 dark:border-neutral-700 dark:bg-neutral-900">
           <img
             src={activeImage}
             alt={`${project.title} screenshot ${activeIndex + 1}`}
@@ -102,18 +102,18 @@ function ProjectGalleryModal({ project, onClose }) {
               <button
                 type="button"
                 onClick={() => setActiveIndex((index) => (index - 1 + totalImages) % totalImages)}
-                className="absolute top-1/2 left-2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-300 bg-white/90 text-neutral-700 transition-colors hover:border-neutral-900 hover:text-neutral-900 dark:border-neutral-600 dark:bg-neutral-900/90 dark:text-neutral-300 dark:hover:border-neutral-100 dark:hover:text-neutral-100"
+                className="group absolute top-1/2 left-2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-neutral-400 bg-white/90 transition-colors hover:border-neutral-900 hover:bg-neutral-900 dark:border-neutral-100 dark:bg-neutral-100 dark:hover:bg-neutral-200"
                 aria-label="Previous image"
               >
-                <ArrowIcon direction="left" />
+                <ArrowIcon direction="left" className="h-4 w-4 text-neutral-800 transition-colors group-hover:text-neutral-50 dark:text-neutral-900 dark:group-hover:text-neutral-900" />
               </button>
               <button
                 type="button"
                 onClick={() => setActiveIndex((index) => (index + 1) % totalImages)}
-                className="absolute top-1/2 right-2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-300 bg-white/90 text-neutral-700 transition-colors hover:border-neutral-900 hover:text-neutral-900 dark:border-neutral-600 dark:bg-neutral-900/90 dark:text-neutral-300 dark:hover:border-neutral-100 dark:hover:text-neutral-100"
+                className="group absolute top-1/2 right-2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-neutral-400 bg-white/90 transition-colors hover:border-neutral-900 hover:bg-neutral-900 dark:border-neutral-100 dark:bg-neutral-100 dark:hover:bg-neutral-200"
                 aria-label="Next image"
               >
-                <ArrowIcon direction="right" />
+                <ArrowIcon direction="right" className="h-4 w-4 text-neutral-800 transition-colors group-hover:text-neutral-50 dark:text-neutral-900 dark:group-hover:text-neutral-900" />
               </button>
             </>
           )}
@@ -130,7 +130,7 @@ function ProjectGalleryModal({ project, onClose }) {
                   'h-16 w-24 shrink-0 overflow-hidden rounded-md border transition-colors',
                   imageIndex === activeIndex
                     ? 'border-neutral-900 dark:border-neutral-100'
-                    : 'border-neutral-300 opacity-70 hover:opacity-100 dark:border-neutral-600',
+                    : 'border-neutral-400 opacity-70 hover:opacity-100 dark:border-neutral-600',
                 )}
                 aria-label={`View image ${imageIndex + 1}`}
               >
@@ -152,7 +152,7 @@ function ProjectCard({ project, onOpenGallery }) {
   const hasGallery = project.images?.length > 0
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-lg border border-neutral-200 transition-all duration-300 hover:border-neutral-400 dark:border-neutral-700 dark:hover:border-neutral-500">
+    <article className="group flex h-full flex-col overflow-hidden rounded-lg border border-neutral-300 transition-all duration-300 hover:border-neutral-500 dark:border-neutral-700 dark:hover:border-neutral-500">
       <button
         type="button"
         onClick={() => hasGallery && onOpenGallery(project)}
@@ -182,7 +182,7 @@ function ProjectCard({ project, onOpenGallery }) {
           </>
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className={cn(type.mutedLabel, 'text-center font-light tracking-[0.2em] text-neutral-500 dark:text-neutral-400')}>
+            <span className={cn(type.mutedLabel, 'text-center font-light tracking-[0.2em] text-neutral-600 dark:text-neutral-400')}>
               {project.category}
             </span>
           </div>
@@ -193,15 +193,15 @@ function ProjectCard({ project, onOpenGallery }) {
         <h3 className="mb-2 font-sans text-[13px] leading-snug font-semibold text-neutral-900 dark:text-neutral-50">
           {project.title}
         </h3>
-        <p className={cn(type.support, 'mb-4 flex-1 text-neutral-500 dark:text-neutral-400')}>
+        <p className={cn(type.support, 'mb-4 flex-1')}>
           {project.description}
         </p>
 
-        <div className="flex flex-wrap justify-start gap-1.5 rounded-lg border border-neutral-300 p-2 py-4 dark:border-neutral-700">
+        <div className="flex flex-wrap justify-start gap-1.5 border-t border-neutral-400 px-0 py-4 dark:border-neutral-700">
           {project.techStack.map((tech) => (
             <span
               key={tech}
-              className={cn(type.tag, 'rounded-full border border-neutral-300 bg-white px-2.5 py-1 text-neutral-600 shadow-sm shadow-neutral-900/5 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:shadow-none')}
+              className={cn(type.tag, 'tech-pill rounded-full border px-2.5 py-1 shadow-sm shadow-neutral-900/5 transition-colors dark:shadow-none')}
             >
               {tech}
             </span>
@@ -287,7 +287,7 @@ export default function ProjectsSection() {
     <>
       <section
         id="projects"
-        className="border-t border-neutral-200 px-8 py-12 lg:px-12 dark:border-neutral-700"
+        className="border-t border-neutral-300 px-5 py-10 sm:px-8 sm:py-12 lg:px-12 dark:border-neutral-700"
       >
         <div>
           <div className="mb-8 flex flex-col items-center gap-1 text-center">
@@ -346,9 +346,9 @@ export default function ProjectsSection() {
               type="button"
               onClick={prev}
               aria-label="Previous project"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-700 transition-all duration-300 hover:border-neutral-900 hover:bg-neutral-900 hover:text-neutral-50 dark:border-neutral-600 dark:text-neutral-300 dark:hover:border-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-neutral-900"
+              className="group flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-neutral-400 transition-all duration-300 hover:border-neutral-900 hover:bg-neutral-900 dark:border-neutral-100 dark:bg-neutral-100 dark:hover:bg-neutral-200"
             >
-              <ArrowIcon direction="left" />
+              <ArrowIcon direction="left" className="h-4 w-4 text-neutral-800 transition-colors group-hover:text-neutral-50 dark:text-neutral-900 dark:group-hover:text-neutral-900" />
             </button>
 
             <div className="flex items-center gap-2">
@@ -359,7 +359,7 @@ export default function ProjectsSection() {
                   onClick={() => goTo(i)}
                   aria-label={`Go to project ${i + 1}`}
                   className={cn(
-                    'h-1.5 rounded-full transition-all duration-300',
+                    'h-1.5 cursor-pointer rounded-full transition-all duration-300',
                     i === safeIndex ? 'w-6 bg-neutral-900 dark:bg-neutral-100' : 'w-1.5 bg-neutral-300 dark:bg-neutral-600',
                   )}
                 />
@@ -370,9 +370,9 @@ export default function ProjectsSection() {
               type="button"
               onClick={next}
               aria-label="Next project"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-700 transition-all duration-300 hover:border-neutral-900 hover:bg-neutral-900 hover:text-neutral-50 dark:border-neutral-600 dark:text-neutral-300 dark:hover:border-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-neutral-900"
+              className="group flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-neutral-400 transition-all duration-300 hover:border-neutral-900 hover:bg-neutral-900 dark:border-neutral-100 dark:bg-neutral-100 dark:hover:bg-neutral-200"
             >
-              <ArrowIcon direction="right" />
+              <ArrowIcon direction="right" className="h-4 w-4 text-neutral-800 transition-colors group-hover:text-neutral-50 dark:text-neutral-900 dark:group-hover:text-neutral-900" />
             </button>
           </div>
         </div>

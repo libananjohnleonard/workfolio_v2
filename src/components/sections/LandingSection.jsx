@@ -7,10 +7,10 @@ function ScrollIndicator() {
       className="pointer-events-none absolute right-8 top-16 hidden flex-col items-center gap-4 lg:flex lg:top-24"
       aria-hidden="true"
     >
-      <div className="relative h-[90px] w-px overflow-hidden bg-neutral-300 dark:bg-neutral-600">
-        <div className="animate-scroll-line absolute top-0 h-10 w-px bg-neutral-950 dark:bg-neutral-50" />
+      <div className="relative h-[90px] w-px overflow-hidden bg-[#5AD9BB]/25">
+        <div className="animate-scroll-line absolute top-0 h-10 w-px bg-[#5AD9BB]" />
       </div>
-      <span className="font-sans text-[9px] tracking-[0.28em] text-neutral-500 uppercase [writing-mode:vertical-rl] dark:text-neutral-400">
+      <span className="font-sans text-[9px] tracking-[0.28em] text-[#5AD9BB] uppercase [writing-mode:vertical-rl]">
         Scroll Down
       </span>
     </div>
@@ -23,12 +23,12 @@ function SocialLink({ href, label, icon, external = false }) {
       href={href}
       aria-label={label}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      className="group inline-flex w-full items-center gap-3 rounded-full border border-neutral-300 bg-transparent px-3 py-2.5 transition-all duration-300 hover:border-neutral-950 hover:bg-neutral-950/5 sm:w-auto sm:py-2 dark:border-neutral-600 dark:hover:border-neutral-50 dark:hover:bg-neutral-50/5"
+      className="group inline-flex w-full cursor-pointer items-center gap-3 rounded-full border border-[#26453E] bg-transparent px-3 py-2.5 transition-all duration-300 hover:border-[#5AD9BB] hover:bg-[#26453E]/10 sm:w-auto sm:py-2 dark:border-[#5AD9BB] dark:hover:bg-[#5AD9BB]/10"
     >
-      <span className="flex h-6 w-6 items-center justify-center text-neutral-700 transition-colors duration-300 group-hover:text-neutral-950 dark:text-neutral-300 dark:group-hover:text-neutral-50">
+      <span className="flex h-6 w-6 items-center justify-center text-[#26453E] transition-colors duration-300 group-hover:text-[#5AD9BB] dark:text-[#5AD9BB]">
         <SocialIcon type={icon} className="h-[15px] w-[15px]" />
       </span>
-      <span className="min-w-0 font-sans text-[12px] leading-snug font-light tracking-[0.02em] text-neutral-600 break-words transition-colors duration-300 group-hover:text-neutral-950 sm:text-[11px] sm:break-all dark:text-neutral-400 dark:group-hover:text-neutral-50">
+      <span className="min-w-0 font-sans text-[12px] leading-snug font-light tracking-[0.02em] text-[#26453E] break-words transition-colors duration-300 group-hover:text-[#5AD9BB] sm:text-[11px] sm:break-all dark:text-[#5AD9BB]">
         {label}
       </span>
     </a>
@@ -43,7 +43,7 @@ export default function LandingSection() {
       <div className="flex flex-1 flex-col justify-center px-5 pt-6 pb-8 sm:px-8 sm:pt-8 sm:pb-10 lg:px-12 lg:pt-12 lg:pb-12">
         <div className="flex flex-col">
           <div className="pt-4 lg:pt-6">
-            <p className="mb-4 inline-flex w-fit flex-wrap items-center gap-x-2 gap-y-1 font-sans text-[10px] leading-tight font-semibold tracking-[0.16em] text-neutral-500 uppercase sm:gap-3 sm:text-[11px] sm:tracking-[0.22em] dark:text-neutral-400">
+            <p className="mb-4 inline-flex w-fit flex-wrap items-center gap-x-2 gap-y-1 font-sans text-[10px] leading-tight font-semibold tracking-[0.16em] text-[#173F39] uppercase sm:gap-3 sm:text-[11px] sm:tracking-[0.22em] dark:text-[#5AD9BB]">
               <span>Computer Engineer</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ export default function LandingSection() {
 
           <div className="mt-8 flex flex-col gap-6 sm:mt-[51px] sm:flex-row sm:items-start sm:justify-between sm:gap-8 lg:mt-[67px]">
             <div className="max-w-[26rem]">
-              <p className="font-sans text-[14px] leading-[1.7] font-light text-neutral-600 sm:text-[15px] sm:leading-[1.75] dark:text-neutral-400">
+              <p className="font-sans text-[14px] leading-[1.7] font-light text-neutral-700 sm:text-[15px] sm:leading-[1.75] dark:text-neutral-300">
                 Designing with purpose, developing with precision. Creating digital experiences that feel intuitive and memorable.
               </p>
             </div>

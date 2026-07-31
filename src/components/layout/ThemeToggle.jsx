@@ -60,8 +60,8 @@ export default function ThemeToggle({ className, showLabel = true }) {
       )}
       aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      {dark ? <MoonIcon /> : <SunIcon />}
-      {showLabel ? (dark ? 'Dark' : 'Light') : null}
+      {dark ? <SunIcon /> : <MoonIcon />}
+      {showLabel ? (dark ? 'Light' : 'Dark') : null}
     </button>
   );
 }

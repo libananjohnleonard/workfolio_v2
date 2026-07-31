@@ -4,16 +4,16 @@ import { cn } from '@/lib/utils'
 import { type } from '@/lib/typography'
 
 const accordionOrgClassName =
-  'font-sans text-[12px] leading-snug font-light text-neutral-600 dark:text-neutral-400'
+  'font-sans text-[12px] leading-snug font-light text-neutral-700 dark:text-neutral-300'
 
 const accordionPeriodClassName =
-  'font-sans text-[11px] leading-tight font-semibold tracking-[0.14em] uppercase text-neutral-500 dark:text-neutral-400'
+  'font-sans text-[11px] leading-tight font-semibold tracking-[0.14em] uppercase text-[#26453E] dark:text-[#5AD9BB]'
 
 const accordionLocationClassName =
-  'font-sans text-[12px] leading-tight font-light tracking-[0.03em] text-neutral-500 dark:text-neutral-400'
+  'font-sans text-[12px] leading-tight font-light tracking-[0.03em] text-neutral-600 dark:text-neutral-400'
 
 const accordionAddressClassName =
-  'font-sans text-[11px] leading-[1.45] font-light text-neutral-400 dark:text-neutral-500'
+  'font-sans text-[11px] leading-[1.45] font-light text-neutral-600 dark:text-neutral-400'
 
 function renderDetailText(text) {
   return text.split(/(\{[^}]+\})/g).map((part, index) => {
@@ -34,9 +34,9 @@ function renderDetailText(text) {
 function TechStackPills({ items, className, label }) {
   if (!items || items.length === 0) return null
   return (
-    <div className={cn('mt-5 border-t border-neutral-200 pt-4 dark:border-neutral-700', className)}>
+    <div className={cn('mt-5 border-t border-neutral-300 pt-4 dark:border-neutral-700', className)}>
       {label && (
-        <p className="mb-2 font-sans text-[10px] leading-tight font-semibold tracking-[0.16em] text-neutral-400 uppercase dark:text-neutral-500">
+        <p className="mb-2 font-sans text-[10px] leading-tight font-semibold tracking-[0.16em] text-neutral-600 uppercase dark:text-neutral-400">
           {label}
         </p>
       )}
@@ -44,7 +44,7 @@ function TechStackPills({ items, className, label }) {
         {items.map((item) => (
           <span
             key={item}
-            className={cn(type.tag, 'rounded-full border border-neutral-300 bg-white px-2.5 py-1 text-neutral-600 shadow-sm shadow-neutral-900/5 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:shadow-none')}
+            className={cn(type.tag, 'tech-pill rounded-full border px-2.5 py-1 shadow-sm shadow-neutral-900/5 transition-colors dark:shadow-none')}
           >
             {item}
           </span>
@@ -56,8 +56,8 @@ function TechStackPills({ items, className, label }) {
 
 function ProjectCard({ project, index }) {
   return (
-    <div className="grid grid-cols-[auto_1fr] gap-3 rounded-lg border border-neutral-200 bg-white/50 p-3 dark:border-neutral-700 dark:bg-neutral-900/30">
-      <span className="flex h-7 w-7 items-center justify-center rounded-full border border-neutral-300 font-sans text-[11px] font-medium text-neutral-500 dark:border-neutral-700 dark:text-neutral-400">
+    <div className="grid grid-cols-[auto_1fr] gap-3 rounded-lg border border-neutral-300 bg-white/50 p-3 dark:border-neutral-700 dark:bg-neutral-900/30">
+      <span className="flex h-7 w-7 items-center justify-center rounded-full border border-[#26453E] font-sans text-[11px] font-medium text-[#26453E] dark:border-[#5AD9BB] dark:text-[#5AD9BB]">
         {String(index + 1).padStart(2, '0')}
       </span>
 
@@ -67,7 +67,7 @@ function ProjectCard({ project, index }) {
             {project.name}
           </span>
           {project.role && (
-            <span className="shrink-0 font-sans text-[10px] leading-tight font-semibold tracking-[0.12em] text-neutral-400 uppercase dark:text-neutral-500">
+            <span className="shrink-0 font-sans text-[10px] leading-tight font-semibold tracking-[0.12em] text-[#26453E] uppercase dark:text-[#5AD9BB]">
               {project.role}
             </span>
           )}
@@ -86,7 +86,7 @@ function ProjectCard({ project, index }) {
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className={cn(type.tag, 'rounded-full border border-neutral-300 bg-white px-2.5 py-1 text-neutral-600 shadow-sm shadow-neutral-900/5 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:shadow-none')}
+                className={cn(type.tag, 'tech-pill rounded-full border px-2.5 py-1 shadow-sm shadow-neutral-900/5 transition-colors dark:shadow-none')}
               >
                 {tag}
               </span>
@@ -104,10 +104,10 @@ function ProjectShowcase({ projects }) {
   return (
     <div className="mb-4">
       <div className="mb-3 flex items-center justify-between gap-3">
-        <p className="font-sans text-[10px] leading-tight font-semibold tracking-[0.16em] text-neutral-400 uppercase dark:text-neutral-500">
+        <p className="font-sans text-[10px] leading-tight font-semibold tracking-[0.16em] text-neutral-600 uppercase dark:text-neutral-400">
           Selected work
         </p>
-        <span className="font-sans text-[11px] leading-tight font-light text-neutral-400 dark:text-neutral-500">
+        <span className="font-sans text-[11px] leading-tight font-light text-neutral-600 dark:text-neutral-400">
           {projects.length} projects
         </span>
       </div>
@@ -125,17 +125,15 @@ function ProjectShowcase({ projects }) {
   )
 }
 
-function ChevronIcon({ className = 'h-4 w-4', open = false }) {
+function ChevronIcon({ className = 'h-[6px] w-[11px]', open = false, style }) {
   return (
     <svg
       className={cn('transition-transform duration-300', open && 'rotate-180', className)}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.5}
+      viewBox="0 0 11 6"
+      style={style}
       aria-hidden="true"
     >
-      <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+      <path fill="currentColor" d="M5.5 6c-.3 0-.58-.14-.76-.38L.2.96C-.14.51.18 0 .74 0h9.52c.56 0 .88.51.54.96L6.26 5.62c-.18.24-.46.38-.76.38Z" />
     </svg>
   )
 }
@@ -156,20 +154,20 @@ function CertificateModal({ certificate, onClose }) {
         onClick={onClose}
         aria-label="Close certificate preview"
       />
-      <div className="relative z-10 flex max-h-[88svh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-[#f2efea] p-5 shadow-2xl dark:border-neutral-700 dark:bg-[#141414]">
+      <div className="relative z-10 flex max-h-[88svh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-neutral-300 bg-[#f2efea] p-5 shadow-2xl dark:border-neutral-700 dark:bg-[#141414]">
         <div className="mb-4 flex items-center justify-between gap-4">
           <div className="flex flex-col">
             <span className="font-sans text-[13px] font-semibold text-neutral-900 dark:text-neutral-50">
               {certificate.title}
             </span>
-            <span className={cn(type.mutedLabel, 'font-light tracking-[0.12em] text-neutral-400 dark:text-neutral-500')}>
+            <span className={cn(type.mutedLabel, 'font-light tracking-[0.12em] text-neutral-600 dark:text-neutral-400')}>
               {[certificate.issuer, certificate.date].filter(Boolean).join(' | ')}
             </span>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-neutral-300 text-neutral-600 transition-colors hover:border-neutral-900 hover:text-neutral-900 dark:border-neutral-600 dark:text-neutral-400 dark:hover:border-neutral-100 dark:hover:text-neutral-100"
+            className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-neutral-400 text-neutral-700 transition-colors hover:border-neutral-900 hover:text-neutral-900 dark:border-neutral-600 dark:text-neutral-300 dark:hover:border-neutral-100 dark:hover:text-neutral-100"
             aria-label="Close"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -177,7 +175,7 @@ function CertificateModal({ certificate, onClose }) {
             </svg>
           </button>
         </div>
-        <div className="flex min-h-0 flex-1 items-center justify-center overflow-hidden rounded-lg border border-neutral-200 bg-white p-3 dark:border-neutral-700 dark:bg-neutral-900">
+        <div className="flex min-h-0 flex-1 items-center justify-center overflow-hidden rounded-lg border border-neutral-300 bg-white p-3 dark:border-neutral-700 dark:bg-neutral-900">
           {certificate.image ? (
             <img
               src={certificate.image}
@@ -185,8 +183,8 @@ function CertificateModal({ certificate, onClose }) {
               className="max-h-[68svh] w-auto max-w-full object-contain"
             />
           ) : (
-            <div className="flex aspect-[4/3] w-full items-center justify-center rounded-lg border border-dashed border-neutral-300 text-neutral-400 dark:border-neutral-700">
-              <span className={cn(type.support, 'text-neutral-400 dark:text-neutral-500')}>No preview available</span>
+            <div className="flex aspect-[4/3] w-full items-center justify-center rounded-lg border border-dashed border-neutral-400 text-neutral-600 dark:border-neutral-700 dark:text-neutral-400">
+              <span className={cn(type.support, 'text-neutral-600 dark:text-neutral-400')}>No preview available</span>
             </div>
           )}
         </div>
@@ -200,14 +198,14 @@ function AccordionItem({ item, index, onCertificateClick }) {
   const [open, setOpen] = useState(index === 0)
 
   return (
-    <div className="overflow-hidden rounded-lg border border-neutral-200 bg-[#f7f4ef] shadow-sm shadow-neutral-900/5 dark:border-neutral-700 dark:bg-[#141414]/40 dark:shadow-none">
+    <div className="overflow-hidden rounded-lg border border-neutral-300 bg-[#f7f4ef] shadow-sm shadow-neutral-900/5 dark:border-neutral-700 dark:bg-[#141414]/40 dark:shadow-none">
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
-        className="group grid w-full grid-cols-[auto_1fr_auto] items-center gap-4 bg-white px-5 py-4 text-left dark:bg-neutral-900/50"
+        className="group grid w-full cursor-pointer grid-cols-[auto_1fr_auto] items-center gap-4 bg-white px-5 py-4 text-left transition-colors hover:bg-neutral-100 dark:bg-neutral-900/50 dark:hover:bg-neutral-800/70"
       >
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-neutral-300 text-neutral-700 dark:border-neutral-600 dark:text-neutral-300">
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#26453E] text-[#26453E] transition-colors group-hover:border-[#26453E] group-hover:bg-[#26453E] group-hover:text-[#5AD9BB] dark:border-[#5AD9BB] dark:text-[#5AD9BB] dark:group-hover:border-[#26453E] dark:group-hover:bg-[#26453E] dark:group-hover:text-[#5AD9BB]">
           <Icon className="h-4 w-4" />
         </span>
         <span className="flex min-w-0 flex-col gap-1">
@@ -239,7 +237,10 @@ function AccordionItem({ item, index, onCertificateClick }) {
               )}
             </span>
           )}
-          <ChevronIcon className="h-4 w-4 text-neutral-400" open={open} />
+          <ChevronIcon
+            className="h-[6px] w-[11px] shrink-0 text-[#173F39] transition-colors group-hover:text-[#173F39] dark:text-[#5AD9BB] dark:group-hover:text-[#5AD9BB]"
+            open={open}
+          />
         </span>
       </button>
 
@@ -250,7 +251,7 @@ function AccordionItem({ item, index, onCertificateClick }) {
         )}
       >
         <div className="overflow-hidden">
-          <div className="border-t border-neutral-200 bg-[#f7f4ef] px-5 py-5 dark:border-neutral-700 dark:bg-[#141414]/40">
+          <div className="border-t border-neutral-300 bg-[#f7f4ef] px-5 py-5 dark:border-neutral-700 dark:bg-[#141414]/40">
             {(item.period || item.location) && (
               <div className="mb-4 flex flex-col gap-1 sm:hidden">
                 {item.period && (
@@ -279,7 +280,7 @@ function AccordionItem({ item, index, onCertificateClick }) {
                     key={j}
                     className={cn(type.support, 'relative pl-4')}
                   >
-                    <span className="absolute top-[0.72em] left-0 h-1 w-1 rounded-full bg-neutral-400 dark:bg-neutral-500" />
+                    <span className="absolute top-[0.72em] left-0 h-1.5 w-1.5 rounded-full bg-[#173F39] dark:bg-[#5AD9BB]" />
                     {renderDetailText(detail)}
                   </li>
                 ))}
@@ -306,12 +307,12 @@ function AccordionItem({ item, index, onCertificateClick }) {
                 {item.certificates.map((cert) => (
                   <li
                     key={cert.title}
-                    className="flex items-center justify-between gap-3 rounded-lg border border-neutral-200 px-4 py-3 transition-colors hover:border-neutral-400 dark:border-neutral-700 dark:hover:border-neutral-500"
+                    className="flex items-center justify-between gap-3 rounded-lg border border-neutral-300 px-4 py-3 transition-colors hover:border-neutral-500 dark:border-neutral-700 dark:hover:border-neutral-500"
                   >
                     <button
                       type="button"
                       onClick={() => onCertificateClick(cert)}
-                      className="flex flex-1 items-center justify-between gap-3 text-left"
+                      className="flex flex-1 cursor-pointer items-center justify-between gap-3 text-left"
                     >
                       <span className="flex flex-col">
                         <span className="font-sans text-[13px] leading-snug font-semibold text-neutral-900 dark:text-neutral-100">
@@ -321,7 +322,7 @@ function AccordionItem({ item, index, onCertificateClick }) {
                           {[cert.issuer, cert.date].filter(Boolean).join(' | ')}
                         </span>
                       </span>
-                      <svg className="h-3.5 w-3.5 shrink-0 text-neutral-500 dark:text-neutral-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <svg className="h-3.5 w-3.5 shrink-0 text-neutral-600 dark:text-neutral-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                       </svg>
@@ -344,9 +345,9 @@ export default function ExperienceSection() {
     <>
       <section
         id="experience"
-        className="border-t border-neutral-200 px-8 py-12 lg:px-12 dark:border-neutral-700"
+        className="border-t border-neutral-300 px-5 py-10 sm:px-8 sm:py-12 lg:px-12 dark:border-neutral-700"
       >
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_1fr] lg:gap-20">
+        <div className="grid grid-cols-1 gap-10 sm:gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
           {/* Left column — Copy */}
           <div className="flex flex-col">
             <h2 className={cn(type.label, 'mb-6')}>
@@ -366,7 +367,7 @@ export default function ExperienceSection() {
 
             <a
               href="#contact"
-              className={cn(type.button, 'group inline-flex w-fit items-center gap-2 rounded-full border border-neutral-900 bg-neutral-900 px-5 py-2 text-neutral-50 uppercase transition-all duration-300 hover:bg-transparent hover:text-neutral-900 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-transparent dark:hover:text-neutral-100')}
+              className={cn(type.button, 'group inline-flex w-fit cursor-pointer items-center gap-2 rounded-full border border-neutral-900 bg-neutral-900 px-5 py-2 text-neutral-50 uppercase transition-all duration-300 hover:bg-neutral-800 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200')}
             >
               Send a message
               <svg

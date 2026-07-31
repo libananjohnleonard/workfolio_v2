@@ -4,15 +4,15 @@ import { cn } from '@/lib/utils'
 
 function SkillGroup({ category, items }) {
   return (
-    <div className="rounded-2xl border border-neutral-200 p-4 dark:border-neutral-700">
-      <h3 className={cn(type.label, 'mb-3')}>
+    <div className="rounded-2xl border border-neutral-300 p-4 dark:border-neutral-700">
+      <h3 className="mb-3 font-sans text-[13px] leading-tight font-semibold tracking-[0.22em] text-neutral-900 uppercase dark:text-neutral-50">
         {category}
       </h3>
       <div className="flex flex-wrap gap-2">
         {items.map((item) => (
           <span
             key={item}
-            className={cn(type.tag, 'rounded-full border border-neutral-300 bg-white px-3 py-1 text-neutral-600 shadow-sm shadow-neutral-900/5 transition-colors hover:border-neutral-500 hover:text-neutral-800 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:shadow-none dark:hover:border-neutral-400 dark:hover:text-neutral-200')}
+            className={cn(type.tag, 'tech-pill rounded-full border px-3 py-1 shadow-sm shadow-neutral-900/5 transition-colors dark:shadow-none')}
           >
             {item}
           </span>
@@ -24,9 +24,9 @@ function SkillGroup({ category, items }) {
 
 export default function AboutSection() {
   return (
-    <section id="about" className="border-t border-neutral-300 dark:border-neutral-700 px-8 py-12 lg:px-12">
+    <section id="about" className="border-t border-neutral-300 px-5 py-10 sm:px-8 sm:py-12 lg:px-12 dark:border-neutral-700">
       <div>
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_1fr] lg:gap-20">
+        <div className="grid grid-cols-1 gap-10 sm:gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
           {/* Left column — Bio */}
           <div className="flex flex-col">
             <h2 className={cn(type.label, 'mb-6')}>
@@ -48,7 +48,7 @@ export default function AboutSection() {
 
             <a
               href={ABOUT.ctaHref}
-              className={cn(type.button, 'group mt-4 inline-flex w-fit items-center gap-2 rounded-full border border-neutral-900 bg-neutral-900 px-5 py-2 text-neutral-50 uppercase transition-all duration-300 hover:bg-transparent hover:text-neutral-900 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-transparent dark:hover:text-neutral-100')}
+              className={cn(type.button, 'group mt-4 inline-flex w-fit cursor-pointer items-center gap-2 rounded-full border border-neutral-900 bg-neutral-900 px-5 py-2 text-neutral-50 uppercase transition-all duration-300 hover:bg-neutral-800 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200')}
             >
               {ABOUT.cta}
               <svg
