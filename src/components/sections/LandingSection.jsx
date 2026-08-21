@@ -23,7 +23,7 @@ function SocialLink({ href, label, icon, external = false }) {
       href={href}
       aria-label={label}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      className="group inline-flex w-full cursor-pointer items-center gap-3 rounded-full border border-[#26453E] bg-transparent px-3 py-2.5 transition-all duration-300 hover:border-[#5AD9BB] hover:bg-[#26453E]/10 sm:w-auto sm:py-2 dark:border-[#5AD9BB] dark:hover:bg-[#5AD9BB]/10"
+      className="group inline-flex w-full cursor-pointer items-center gap-3 rounded-full border border-[#26453E] bg-transparent px-3 py-2.5 transition-all duration-300 hover:border-[#26453E] hover:bg-[#26453E] sm:w-auto sm:py-2 dark:border-[#5AD9BB] dark:hover:bg-[#5AD9BB]/10"
     >
       <span className="flex h-6 w-6 items-center justify-center text-[#26453E] transition-colors duration-300 group-hover:text-[#5AD9BB] dark:text-[#5AD9BB]">
         <SocialIcon type={icon} className="h-[15px] w-[15px]" />
