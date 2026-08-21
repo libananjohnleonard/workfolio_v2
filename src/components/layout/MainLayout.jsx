@@ -1,6 +1,7 @@
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
 import BackToTopButton from '@/components/ui/BackToTopButton'
+import CursorTag from '@/components/ui/CursorTag'
 
 export default function MainLayout({ children }) {
   return (
@@ -9,6 +10,7 @@ export default function MainLayout({ children }) {
       <main className="flex flex-1 flex-col border-x border-neutral-300 dark:border-neutral-700 ">{children}</main>
       <Footer />
       <BackToTopButton />
+      <CursorTag />
     </div>
   )
 }

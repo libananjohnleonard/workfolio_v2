@@ -17,10 +17,10 @@ export default function Footer() {
         />
 
         <div className="flex min-w-0 flex-col text-center">
-          <p className="whitespace-nowrap font-sans text-[9px] leading-snug font-semibold tracking-[0.02em] text-neutral-950 min-[390px]:text-[10px] sm:text-[14px] dark:text-neutral-50">
+          <p className="whitespace-nowrap font-sans text-[9px] leading-snug font-bold tracking-[0.02em] text-neutral-950 min-[390px]:text-[10px] sm:text-[14px] dark:text-neutral-50">
             Built with passion by John Leonard A. Libanan
           </p>
-          <p className="mt-1.5 whitespace-nowrap font-sans text-[9px] leading-snug font-medium tracking-[0.02em] text-neutral-950 min-[390px]:text-[10px] sm:mt-2 sm:text-[14px] dark:text-neutral-100">
+          <p className="mt-1.5 whitespace-nowrap font-sans text-[9px] leading-snug font-normal tracking-[0.02em] text-neutral-500 min-[390px]:text-[10px] sm:mt-2 sm:text-[14px] dark:text-neutral-400">
             &copy; Copyright 2026. All rights reserved.
           </p>
         </div>

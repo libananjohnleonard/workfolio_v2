@@ -1,6 +1,14 @@
 import { LANDING, SOCIAL_LINKS } from '@/constants'
 import { SocialIcon } from '@/components/ui/SocialIcons'
 
+function CodeTag({ children }) {
+  return (
+    <span className="font-mono text-[#173F39] dark:text-[#5AD9BB]">
+      {'<'}{children}{' />'}
+    </span>
+  )
+}
+
 function ScrollIndicator() {
   return (
     <div
@@ -22,6 +30,7 @@ function SocialLink({ href, label, icon, external = false }) {
     <a
       href={href}
       aria-label={label}
+      data-cursor-tag="Say hi! 👋"
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       className="group inline-flex w-full cursor-pointer items-center gap-3 rounded-full border border-[#26453E] bg-transparent px-3 py-2.5 transition-all duration-300 hover:border-[#26453E] hover:bg-[#26453E] sm:w-auto sm:py-2 dark:border-[#5AD9BB] dark:hover:bg-[#5AD9BB]/10"
     >
@@ -75,7 +84,7 @@ export default function LandingSection() {
           <div className="mt-8 flex flex-col gap-6 sm:mt-[51px] sm:flex-row sm:items-start sm:justify-between sm:gap-8 lg:mt-[67px]">
             <div className="max-w-[26rem]">
               <p className="font-sans text-[14px] leading-[1.7] font-light text-neutral-700 sm:text-[15px] sm:leading-[1.75] dark:text-neutral-300">
-                Designing with purpose, developing with precision. Creating digital experiences that feel intuitive and memorable.
+                Designing with <CodeTag>purpose</CodeTag>, developing with <span className="text-[#173F39] dark:text-[#5AD9BB]">precision</span>. Creating digital experiences that feel <span className="text-[#173F39] dark:text-[#5AD9BB]">intuitive</span> and <span className="text-[#173F39] dark:text-[#5AD9BB]">memorable</span>.
               </p>
             </div>
 
